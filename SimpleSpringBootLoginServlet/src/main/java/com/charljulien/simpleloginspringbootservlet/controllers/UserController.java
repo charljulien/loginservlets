@@ -2,35 +2,39 @@ package com.charljulien.simpleloginspringbootservlet.controllers;
 
 import com.charljulien.simpleloginspringbootservlet.beans.User;
 import com.charljulien.simpleloginspringbootservlet.exceptions.UserNotFoundException;
-import com.charljulien.simpleloginspringbootservlet.service.UserServiceImpl;
+import com.charljulien.simpleloginspringbootservlet.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@SessionAttributes("name")
 public class UserController {
 
     @Autowired
-    UserServiceImpl userServiceImpl;
-
-//    //inject via application.properties
-//    @Value("${welcome.message:test}")
-//    private String message = "Hello World";
+    LoginService service;
 
     @GetMapping("/login")
-    public String getLogin(/*Map<String, Object> model*/) {
-//        model.put("message", this.message);
+    public String getLogin(ModelMap model) {
         return "login";
     }
 
     @PostMapping("/login")
-    public String postLogin(@RequestBody User user) throws UserNotFoundException {
-        user =  userServiceImpl.findByUsername(user.getUsername());
-        if(user == null)
-            throw new UserNotFoundException("id-" + user.getUsername());
-        return "login";
+    public String postLogin (ModelMap model, @RequestParam String name, @RequestParam String password)  {
+        System.out.println("****************" + name);
+
+        boolean isValidUser = service.validateUser(name, password);
+
+        if(!isValidUser){
+            model.put("errorMessage", "Invalid Credentials");
+            return "login";
+        }
+        model.put("name", name);
+        model.put("password", password);
+
+        return "home";
+
     }
 
     @GetMapping("/home")
