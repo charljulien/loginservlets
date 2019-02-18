@@ -1,7 +1,5 @@
 package com.charljulien.simpleloginspringbootservlet.controllers;
 
-import com.charljulien.simpleloginspringbootservlet.beans.User;
-import com.charljulien.simpleloginspringbootservlet.exceptions.UserNotFoundException;
 import com.charljulien.simpleloginspringbootservlet.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,8 +20,6 @@ public class UserController {
 
     @PostMapping("/login")
     public String postLogin (ModelMap model, @RequestParam String name, @RequestParam String password)  {
-        System.out.println("****************" + name);
-
         boolean isValidUser = service.validateUser(name, password);
 
         if(!isValidUser){
@@ -34,16 +30,15 @@ public class UserController {
         model.put("password", password);
 
         return "home";
-
     }
 
     @GetMapping("/home")
-    public String getHome(){
+    public String getHome(ModelMap model){
         return "home";
     }
 
     @PostMapping("/home")
-    public String postHome(){
+    public String postHome(ModelMap model){
         return "home";
     }
 }
