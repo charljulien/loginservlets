@@ -15,7 +15,7 @@
         Spring boot will handle the resource mapping automcatically -->
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
     <style>
-        <%@include file="../css/main.css" %>
+        <%--<%@include file="../css/main.css" %>--%>
     </style>
 </head>
 
