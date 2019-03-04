@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03085038-2c29-4a6c-97e0-6884670453a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/java/com/charljulien/simpleloginspringbootservlet/beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/com/charljulien/simpleloginspringbootservlet/beans/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/java/com/charljulien/simpleloginspringbootservlet/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/com/charljulien/simpleloginspringbootservlet/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-springboot/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-springboot/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-springboot/src/components/home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-springboot/src/components/login.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-springboot/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-springboot/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-springboot/src/router.js" beforeDir="false" />
-    </list>
+    <list default="true" id="03085038-2c29-4a6c-97e0-6884670453a7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -81,11 +72,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue-springboot/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="299">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#83#105#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,12 +191,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551542782786</updated>
       <workItem from="1551542787312" duration="2924000" />
-      <workItem from="1551698086302" duration="13058000" />
+      <workItem from="1551698086302" duration="13312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15982000" />
+    <option name="totallyTimeSpent" value="16236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1149" height="1068" extended-state="0" />
@@ -244,13 +234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue-springboot/src/http-common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue-springboot/src/components/login.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -282,13 +265,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue-springboot/src/http-common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue-springboot/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="299">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#83#105#0" expanded="true" />
           </folding>
         </state>
       </provider>
