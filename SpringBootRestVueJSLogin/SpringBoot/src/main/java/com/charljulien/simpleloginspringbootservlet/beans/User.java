@@ -17,6 +17,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "errorLogin")
+    private Boolean errorLogin;
+
     public User() {
     }
     public User(String username, String password) {
@@ -45,12 +48,20 @@ public class User {
         this.password = password;
     }
 
+    public Boolean getErrorLogin() {
+        return errorLogin;
+    }
+    public void setErrorLogin(Boolean errorLogin) {
+        this.errorLogin = errorLogin;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id = " + id +
                 ", username = '" + username + '\'' +
                 ", password = '" + password + '\'' +
+                ", errorLogin = " + errorLogin +
                 '}';
     }
 }

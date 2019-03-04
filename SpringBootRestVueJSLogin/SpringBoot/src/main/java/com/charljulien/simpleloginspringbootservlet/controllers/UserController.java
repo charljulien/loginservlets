@@ -3,7 +3,6 @@ package com.charljulien.simpleloginspringbootservlet.controllers;
 import com.charljulien.simpleloginspringbootservlet.beans.User;
 import com.charljulien.simpleloginspringbootservlet.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:8081")
@@ -29,8 +28,9 @@ public class UserController {
             return user;
         }
         else{
+            user.setErrorLogin(true);
             System.out.println("erreur");
-            return null;
+            return user;
         }
     }
 

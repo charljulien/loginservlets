@@ -25,19 +25,19 @@
                   </form>
               </div>
               <div v-else>
-                  <div v-if="!loginOk">
+                  <div v-if="!invalidCredential">
+                      <h2>Welcome {{user.username}}!!</h2>
+                      <form action="login" method="Get">
+                          <input class="loginInputTwo" type="submit" value="logout">
+                      </form>
+                  </div>
+                  <div v-else>
                       <form>
                           <input class="loginInputThree" type="text" placeholder="username" required v-model="user.username" name="name"/><br>
                           <input class="loginInputThree" type="password" placeholder="password" required v-model="user.password" name="password"/><br>
                           <input class="loginInputTwo" type="submit" v-on:click="loginUser" value="login">
                       </form>
                       <p color="red">Error, invalid credentials</p>
-                  </div>
-                  <div v-else>
-                      <h2>Welcome {{user.username}}!!</h2>
-                      <form action="login" method="Get">
-                          <input class="loginInputTwo" type="submit" value="logout">
-                      </form>
                   </div>
               </div>
           </div>
@@ -61,10 +61,11 @@
                 user: {
                     id: 0,
                     username: "",
-                    password: 0
+                    password: 0,
+                    errorLogin: false
                 },
                 login: false,
-                loginOk: false
+                invalidCredential: false
             }
         },
 
@@ -72,26 +73,21 @@
             loginUser() {
                 var data = {
                     username: this.user.username,
-                    password: this.user.password
+                    password: this.user.password,
+                    errorLogin: this.user.errorLogin
                 };
 
+                this.login = true;
                 http
                     .post("/login", data)
                     .then(response => {
-                        this.user.id = response.data.id;
+                        this.data = response.data;
+                        this.invalidCredential = response.data.errorLogin;
                         console.log(response.data);
                     })
                     .catch(e => {
                         console.log(e);
                     });
-                this.login = true;
-
-                //TO DO
-                // correct console log error
-                // create a boolean response from Springboot app
-                if (this.user.username === "username" && this.user.password === "password"){
-                    this.loginOk = true;
-                }
                 /* eslint-disable */
             }
         }
@@ -99,6 +95,5 @@
 </script>
 
 <style lang="scss">
-    /*@import '../node_modules/bootstrap/scss/bootstrap.scss';*/
     @import 'assets/css/bootstrap.css';
 </style>
